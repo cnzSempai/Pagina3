@@ -1,0 +1,48 @@
+#main .carousel-inner img{
+  max-height: 80vh;
+  object-fit: contain;
+
+}
+
+@font-face {
+  font-family: edosz;
+  src: url("assets/css/fuentes/edosz.ttf");
+}
+
+#contPie{
+  font-family: edosz;
+}
+
+#contTarjetas{
+
+font-family: cursive;
+}
+#main{
+
+background-image: url("https://cdn.tn.com.ar/sites/default/files/styles/1366x765/public/2017/02/08/shutterstock_deportes_g.jpg");
+  /* background-image: url("https://as01.epimg.net/showroom/imagenes/2018/05/25/portada/1527258113_223800_1533112865_noticia_normal.jpg"); */
+}
+.card-body{
+  background: #323232;
+}
+.card-text {
+   color: white;
+}
+
+#logo{
+  height: 60px;
+}
+.btn-outline-success{
+  color: #BD2130;
+  border-color: black;
+}
+#rowTerminos{
+  text-align: justify;
+}
+.container a{
+  color:rgb(13, 17, 16);
+}
+
+/* .collapse{
+  background-color: rgb(122, 96, 224);
+} */
