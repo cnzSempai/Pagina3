@@ -20,22 +20,48 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		//$this->load->view('paginaOficial.php');//
+		//$this->load->view('principal.php');
 		$data = array('titulo' => 'Principal');
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
 		$this->load->view('Principal');
 		$this->load->view('front/footer_view');
+
 	}
-	public function terminos_y_condiciones()
+
+	public function quienes_somos()
 	{
-		//$this->load->view('paginaOficial.php');//
-		$data = array('titulo' => 'Quienes somos');
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'Quienes Somos');
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
-		$this->load->view('Quienes_somos');
+		$this->load->view('quienes_somos');
 		$this->load->view('front/footer_view');
+
 	}
+	public function politicas_de_privacidad()
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'Poiticas de Privacidad');
+
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_view');
+		$this->load->view('politicas_de_privacidad');
+		$this->load->view('front/footer_view');
+
+	}
+	public function contactanos()
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'Contactanos');
+
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_view');
+		$this->load->view('contactanos');
+		$this->load->view('front/footer_view');
+
+	}
+
 }
