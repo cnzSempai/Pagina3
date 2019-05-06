@@ -4,45 +4,118 @@
 
 }
 
+#containerContact{
+  background-color: white;
+}
+
 @font-face {
   font-family: edosz;
   src: url("assets/css/fuentes/edosz.ttf");
 }
 
-#contPie{
-  font-family: childWriting-Regular;
+
+
+#foot {
+font-family: cursive;
+}
+#parrafoQuienes{
+  font-family: cursive;
 }
 
 #contTarjetas{
 
 font-family: cursive;
 }
-#main{
 
-background-image: url("https://cdn.tn.com.ar/sites/default/files/styles/1366x765/public/2017/02/08/shutterstock_deportes_g.jpg");
-  /* background-image: url("https://as01.epimg.net/showroom/imagenes/2018/05/25/portada/1527258113_223800_1533112865_noticia_normal.jpg"); */
+#titTerminos{
+  text-align: center;
+}
+
+#titLicencia{
+  text-align: center;
+  font-family: cursive;
+}
+
+
+#main{
+background-image: url("../img/fondo.jpg");
+}
+#main-contactanos{
+  background-image: url("../img/contactanos2.jpg");
+}
+#mainComerc{
+  background-image: url("../img/pago.jpg");
+  font-family: cursive;
+
+}
+
+
+#navLogo{
+  background-color: white;
 }
 .card-body{
   background: #323232;
+
 }
+
+
+#alineac{
+  text-align: justify;
+}
+
+#mainQuienes{
+  background-image: url("../img/fondo-madera.jpg");
+}
+
+#centro-p{
+  padding: 40px;
+}
+
+#formasPago{
+  color: rgb(236, 33, 228);
+
+}
+
+#seccionComerc{
+  padding: inherit;
+  background-color: rgb(98, 204, 210);
+}
+
+#secComer2{
+
+  background-color: rgb(250, 56, 242);
+}
+
+.card-title{
+  color:white;
+}
+
 .card-text {
    color: white;
 }
 
+
 #logo{
   height: 60px;
 }
+
+#main-contactanos{
+  padding: 60px;
+
+}
+
 .btn-outline-success{
   color: #BD2130;
   border-color: black;
 }
 #rowTerminos{
   text-align: justify;
+  font-family:cursive;
 }
 .container a{
   color:rgb(13, 17, 16);
 }
 
-/* .collapse{
-  background-color: rgb(122, 96, 224);
-} */
+#parrafo-licencia{
+  text-align:justify;
+}

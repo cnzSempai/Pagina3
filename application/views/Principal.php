@@ -1,4 +1,4 @@
-<body background-image id="body">
+<body  id="body">
 	<main id="main">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -8,7 +8,7 @@
   </ol>
 	<!-- carrusel -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active ">
       <img src="assets/img/carro-1.png" class="d-block w-100" alt="botines">
     </div>
     <div class="carousel-item">
@@ -38,12 +38,9 @@
 			  <img src="assets/img/card-1.png" class="card-img-top" alt="zapatillas">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						ZAPATILLAS ADIDAS <br>
+						RUNNING STARLUX <br>
+						MUJER
 					</p>
 			  </div>
 			</div>
@@ -56,12 +53,9 @@
 			  <img src="assets/img/card-2.png" class="card-img-top" alt="zapatillas">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						ZAPATILLAS FILA <br>
+						RUNNING POWERFULL <br>
+						HOMBRE
 					</p>
 			  </div>
 			</div>
@@ -74,12 +68,9 @@
 			  <img src="assets/img/card-3.png" class="card-img-top" alt="zapatillas">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						BOTINES ADIDAS </br>
+						RUNNIG ULTRABOOST UNCAGED
+
 					</p>
 			  </div>
 			</div>
@@ -92,12 +83,10 @@
 			  <img src="assets/img/card-4.png" class="card-img-top" alt="remeras">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						REMERA NIKE </br>
+						BASQUET NBA SAN ANTONIO SPURS <br>
+						DRI-FIT-HOMBRE
+
 					</p>
 			  </div>
 			</div>
@@ -110,12 +99,10 @@
 			  <img src="assets/img/card-5.png" class="card-img-top" alt="remeras">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						REMERA NIKE DRYFIT </br>
+						MEDALIST TRAINING <br>
+						HOMBRE
+
 					</p>
 			  </div>
 			</div>
@@ -128,12 +115,9 @@
 			  <img src="assets/img/card-6.png" class="card-img-top" alt="remeras">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						CAMISETA ADIDAS </br>
+						RIVER ALTERNATIVA 2019 <br>
+						FUTBOL
 					</p>
 			  </div>
 			</div>
@@ -146,12 +130,9 @@
 			  <img src="assets/img/card-7.png" class="card-img-top" alt="pantalones">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						PANTALONES REEBOK </br>
+						MODA CLASSICS JOGGERS</br>
+						HOMBRE
 					</p>
 			  </div>
 			</div>
@@ -164,12 +145,9 @@
 			  <img src="assets/img/card-8.png" class="card-img-top" alt="pantalones">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						PANTALONES TOPPER </br>
+						MODA RTC SLIM UP </br>
+						HOMBRE
 					</p>
 			  </div>
 			</div>
@@ -182,12 +160,9 @@
 			  <img src="assets/img/card-9.png" class="card-img-top" alt="pantalones">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						PANTALONES TOPPER </br>
+						TRAINING TECH FLEECE</br>
+						HOMBRE
 					</p>
 			  </div>
 			</div>
@@ -200,12 +175,9 @@
 			  <img src="assets/img/card-10.png" class="card-img-top" alt="camperas">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+						CAMPERA NIKE</br>
+						FC BARCELONA FUTBOL  <br>
+						ANTHM HOMBRE
 					</p>
 			  </div>
 			</div>
@@ -218,12 +190,9 @@
 			  <img src="assets/img/card-11.png" class="card-img-top" alt="camperas">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+							CAMPERA ADIDAS</br>
+							FUTBOL RIVER PLATE <br>
+							HOMBRE
 					</p>
 			  </div>
 			</div>
@@ -236,12 +205,9 @@
 			  <img src="assets/img/card-12.png" class="card-img-top" alt="camperas">
 			  <div class="card-body">
 			    <p class="card-text">
-						BOTINES UMBRO </br>
-						FUTBOL CAMPO CALIBRA HOMBRE
-						Código: UMB-7F70062311 38
-						De: $1.775,03 </br>
-						Por: $1.172,00 </br>
-						o 6x cuotas de $ 195,33
+					CAMPERA NIKE</br>
+					MODA HOODIE MESH  <br>
+					MUJER
 					</p>
 			  </div>
 			</div>

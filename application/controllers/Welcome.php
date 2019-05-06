@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('principal.php');
-		$data = array('titulo' => 'Principal');
+		$data = array('titulo' => 'CRISport');
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
@@ -41,27 +41,37 @@ class Welcome extends CI_Controller {
 		$this->load->view('front/footer_view');
 
 	}
-	public function politicas_de_privacidad()
+	public function terminos_y_condiciones()
 	{
 		//$this->load->view('principal.php');
-		$data = array('titulo' => 'Poiticas de Privacidad');
+		$data = array('titulo' => 'Terminos y condiciones');
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
-		$this->load->view('politicas_de_privacidad');
+		$this->load->view('terminos_y_condiciones');
 		$this->load->view('front/footer_view');
 
 	}
-	public function contactanos()
+	public function Contactanos()
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'Contactanos');
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
-		$this->load->view('contactanos');
+		$this->load->view('Contactanos');
 		$this->load->view('front/footer_view');
 
 	}
+	public function comercializacion()
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'comercialización');
 
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_view');
+		$this->load->view('comercializacion');
+		$this->load->view('front/footer_view');
+
+	}
 }
