@@ -13,6 +13,7 @@
             <div class="col-12 col-md-3 col-xl">
                 <a style="color: red;" href="<?php echo base_url('terminos_y_condiciones');?>" style="color:white;"><h5>Términos y Condiciones</h5></a>
             </div>
+
         </div>
     </div>
 

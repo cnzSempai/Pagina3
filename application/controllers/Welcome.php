@@ -2,26 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	public function __construct(){
+		parent::__construct();
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	}
 	public function index()
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'CRISport');
+
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
@@ -29,6 +21,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('front/footer_view');
 
 	}
+
+
 
 	public function quienes_somos()
 	{
@@ -71,6 +65,35 @@ class Welcome extends CI_Controller {
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
 		$this->load->view('comercializacion');
+		$this->load->view('front/footer_view');
+
+	}
+
+	public function registrarse()
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'registrarse');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id']=$session_data['perfil_id'];
+		$data['nombre']=$session_data['nombre'];
+
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_registrarse');
+		$this->load->view('registrarse');
+		$this->load->view('front/footer_view');
+
+	}
+	public function login()
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'login');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id']=$session_data['perfil_id'];
+		$data['nombre']=$session_data['nombre'];
+
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_registrarse');
+		$this->load->view('login');
 		$this->load->view('front/footer_view');
 
 	}

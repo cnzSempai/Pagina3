@@ -1,7 +1,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg navbar-light ´´" id="navLogo">
   <span class="navbar-logo">
-  	<a href="http://localhost/Pagina3/">
+  	<a href="http://localhost/Crisport/">
   		<img id="logo" class="mr-3" src="assets/img/logo.png" alt="logo">
   	</a>
 
@@ -79,14 +79,27 @@
 				<a href="#">
 					<img src="assets/img/carrito.png" alt="">
 				</a>
-				<!-- <i class="fas fa-shopping-cart"></i> --
+				<! <i class="fas fa-shopping-cart"></i>
 				<br>Compras</button>
     </form> -->
+
+
+	  	<a class="nav-link btn-outline-light" href="<?php echo base_url('registrarse');?>">
+				<button type="button" name="button">
+					<span class="user">
+						<img id="logo" class="mr-3" src="assets/img/registrar.png" alt="logo">
+					</span>
+				</button>
+
+	  	</a>
+
+
     <form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search" style="">
 			<button class="btn btn-outline-success my-2 my-sm-0" style="color: #323232; background:#BD2130; border-color: #BD2130;" type="submit">Buscar</button>
     </form>
   </div>
+
 </nav>
 
 </header>
