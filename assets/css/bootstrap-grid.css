@@ -15,6 +15,10 @@ html {
   box-sizing: inherit;
 }
 
+.option:hover{
+  background-color: rgb(181, 87, 34);
+}
+
 .container {
   width: 100%;
   padding-right: 15px;

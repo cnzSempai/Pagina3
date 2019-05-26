@@ -11,8 +11,8 @@ class LoginController extends CI_Controller{
 
 	function index()
 	{   //Reglas de validación
-		$this->form_validation->set_rules('usuario', 'Usuario', 'trim|required');
-		$this->form_validation->set_rules('password', 'Contraseña','trim|required|callback__valid_login');
+		$this->form_validation->set_rules('usuario', 'usuario', 'trim|required');
+		$this->form_validation->set_rules('password', 'password','trim|required|callback__valid_login');
 
 		//Mensajes en caso de error
 		$this->form_validation->set_message('required', 'el campo %s es requerido');
@@ -33,7 +33,7 @@ class LoginController extends CI_Controller{
 		else{
 			//Pagina que carga despues de loguearse
 			//redirect(current_url()); ---> Vuelve a la pagina que estaba antes de loguearse
-			redirect(base_url('Principal'));
+			redirect(base_url('principal'));
         }
 	}
 
@@ -92,7 +92,7 @@ class LoginController extends CI_Controller{
 			//destruyo la variable de sesión
 			$this->session->sess_destroy();
 			//direcciono a la página principal
-			redirect(base_url('home'));
+			redirect(base_url('principal'));
 		}
 
 }

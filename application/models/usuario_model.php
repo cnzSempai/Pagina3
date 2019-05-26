@@ -45,7 +45,7 @@ function actualizar_usuario($id,$data){
 }
 function eliminar_usuario($id){
       $this->db->where('id', $id);
-      $query=$this->db->delete('usarios');
+      $query=$this->db->delete('usuarios');
       return true;
 }
 }

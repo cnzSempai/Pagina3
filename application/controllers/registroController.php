@@ -55,7 +55,7 @@
 				//Muestra la página de registro con el título de error
 				$data = array('titulo' => 'Error de formulario');
 				$this->load->view('front/head_view', $data);
-				$this->load->view('front/navbar_registrarse');
+				$this->load->view('front/navbar_view');
 				$this->load->view('registrarse');
 				$this->load->view('front/footer_view');
 			}

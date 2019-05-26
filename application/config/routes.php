@@ -50,16 +50,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Welcome';
-
+//pagina
 $route['principal'] = 'Welcome/index';
 $route['quienes_somos'] = 'Welcome/quienes_somos';
 $route['terminos_y_condiciones'] = 'Welcome/terminos_y_condiciones';
 $route['Contactanos'] = 'Welcome/Contactanos';
 $route['comercializacion'] = 'Welcome/comercializacion';
-$route['registrarse'] = 'Welcome/registrarse';
-$route['login'] = 'Welcome/login';
+//usuarios
 $route['verifico_nuevoregistro'] = 'registroController';
+$route['login'] = 'Welcome/login';
 $route['verifico_usuario'] = 'loginController';
+$route['verifico_consulta'] = 'consultaController';
+$route['cerrar_sesion'] = 'loginController/cerrar_sesion';
+$route['registrarse'] = 'Welcome/registrarse';
+//Productos
+$route['agregaproducto'] = 'Welcome/agregaproducto';
+$route['modificaproducto'] = 'Welcome/modificaproducto';
+$route['muestraelectrodomesticos'] = 'Welcome/muestraelectrodomesticos';
+$route['muestraeliminados'] = 'Welcome/muestraeliminados';
+$route['muestraproductos'] = 'Welcome/muestraproductos';
+$route['verifico_nuevoproducto'] = 'productoController/agrega_producto';
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;

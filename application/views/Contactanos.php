@@ -1,30 +1,44 @@
 <body id="bodyContactanos">
   <main id="main-contactanos">
-    <div class="container col-fluid  " id="containerContact">
+    <div class="well bs-component form-horizontal col-fluid">
+        <?php echo form_open('verifico_consulta', ['class'=> 'form_group', 'role'=>'form','id'=>'form_consulta']); ?>
     <div class="row">
     <div class="col-fluid " style="background: white;" >
-        <form>
-      <div class="form-group">
-        <h3>Escribenos tu mensaje </h3>
-        <label for="exampleFormControlInput1">Dirección de email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Seleccione opción</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>Comentario</option>
-          <option>Consulta</option>
-          <option>Consejo</option>
-          <option>Inquietud</option>
-          <option>Otros</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Descripción</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <input class="btn btn-primary" type="submit" value="Enviar" >
-    </form>
+          <fieldset>
+            <div class="form-group">
+  						<label class="col-lg-2 control-label">Correo</label>
+  						<div class="col-lg-10">
+  							<?php echo form_input(['name' => 'email',
+  													'id' => 'email',
+  													'class' => 'form-control',
+  													'placeholder' => 'Correo',
+  													'required'=>'required',
+  													'autofocus'=>'autofocus',
+  													'value'=>set_value('email')]); ?>
+  						</div>
+  					</div>
+  					<div class="form-group">
+  						<label class="col-lg-2 control-label">Descripcion</label>
+  						<div class="col-lg-10">
+  							<?php echo form_textarea(['name' => 'descripcion',
+  													'id' => 'descripcion',
+  													'class' => 'form-control',
+  													'placeholder' => 'Descripcion',
+  													'required'=>'required',
+  													'value'=>set_value('descripcion')]); ?>
+  						</div>
+  					</div>
+            <div class="col-lg-3 col-lg-offset-4">
+  						<?php echo form_submit('submit', 'Enviar',"class='btn btn-primary' "); ?> <br><br>
+  						<?php echo form_close(); ?>
+  					</div>
+
+
+            </fieldset>
+
+
+
+
   </div>
   <div class="col-1">
 

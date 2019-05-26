@@ -28,6 +28,9 @@ class Welcome extends CI_Controller {
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'Quienes Somos');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
@@ -35,10 +38,27 @@ class Welcome extends CI_Controller {
 		$this->load->view('front/footer_view');
 
 	}
+	public function login()
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'Login');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
+
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_view');
+		$this->load->view('login');
+		$this->load->view('front/footer_view');
+
+	}
 	public function terminos_y_condiciones()
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'Terminos y condiciones');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
@@ -50,6 +70,9 @@ class Welcome extends CI_Controller {
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'Contactanos');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
@@ -61,6 +84,9 @@ class Welcome extends CI_Controller {
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'comercialización');
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
@@ -78,23 +104,10 @@ class Welcome extends CI_Controller {
 		$data['nombre']=$session_data['nombre'];
 
 		$this->load->view('front/head_view',$data);
-		$this->load->view('front/navbar_registrarse');
+		$this->load->view('front/navbar_view');
 		$this->load->view('registrarse');
 		$this->load->view('front/footer_view');
 
 	}
-	public function login()
-	{
-		//$this->load->view('principal.php');
-		$data = array('titulo' => 'login');
-		$session_data = $this->session->userdata('logged_in');
-		$data['perfil_id']=$session_data['perfil_id'];
-		$data['nombre']=$session_data['nombre'];
 
-		$this->load->view('front/head_view',$data);
-		$this->load->view('front/navbar_registrarse');
-		$this->load->view('login');
-		$this->load->view('front/footer_view');
-
-	}
 }

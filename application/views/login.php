@@ -18,7 +18,7 @@
            <div class="media-container-column" data-form-type="formoid">
             <div data-form-alert="" hidden="" class="align-center">Thanks for filling out the form!</div>
              <?php echo validation_errors(); ?>
-			
+
             <?php echo form_open('verifico_usuario', ['class' => 'form-signin', 'role' => 'form']); ?> <br>
 
 				<?php echo form_input(['name' => 'usuario',
@@ -30,8 +30,8 @@
             <br>
 
 				<?php echo form_input(['type' => 'password',
-										'name' => 'contrasena',
-										'id' => 'contrasena',
+										'name' => 'password',
+										'id' => 'password',
 										'class' => 'form-control',
 										'placeholder' => 'Contraseña',
 										'required'=>'required']); ?> <br>
