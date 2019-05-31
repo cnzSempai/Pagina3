@@ -1,7 +1,17 @@
+#navbar a{
+  font-weight: bold;
+  color:black;
+}
+
 #main .carousel-inner img{
   max-height: 80vh;
   object-fit: contain;
 
+}
+
+#tablaProd{
+  background-position: center;
+  background-size:cover;
 }
 
 #containerContact{
@@ -12,7 +22,10 @@
   font-family: edosz;
   src: url("assets/css/fuentes/edosz.ttf");
 }
-
+#tarjetas{
+  color: #fff;
+  background-color: #fff;
+}
 
 
 #foot {
@@ -23,7 +36,8 @@ font-family: cursive;
 }
 
 #contTarjetas{
-
+background-color:#323232;
+color:#fff;
 font-family: cursive;
 }
 

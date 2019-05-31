@@ -39,6 +39,11 @@
 				<?php echo form_submit('submit', 'Iniciar sesión',"class='btn btn-form btn-primary display-4'"); ?> <br>
 
 				<?php echo form_close(); ?>
+
+        <button class="btn btn-form btn-primary display-4 mt-3" >
+
+              <a href="<?php echo base_url('registrarse');?>" style=" color: #fff;">Registrate</a>
+        </button>
 				<br>
         </div>
         </div>

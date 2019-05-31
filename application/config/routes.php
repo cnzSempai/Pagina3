@@ -51,25 +51,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Welcome';
 //pagina
+
 $route['principal'] = 'Welcome/index';
 $route['quienes_somos'] = 'Welcome/quienes_somos';
 $route['terminos_y_condiciones'] = 'Welcome/terminos_y_condiciones';
 $route['Contactanos'] = 'Welcome/Contactanos';
 $route['comercializacion'] = 'Welcome/comercializacion';
+
 //usuarios
+
 $route['verifico_nuevoregistro'] = 'registroController';
-$route['login'] = 'Welcome/login';
+$route['login'] = 'loginController/login';
 $route['verifico_usuario'] = 'loginController';
 $route['verifico_consulta'] = 'consultaController';
 $route['cerrar_sesion'] = 'loginController/cerrar_sesion';
-$route['registrarse'] = 'Welcome/registrarse';
+$route['registrarse'] = 'registroController/index';
+$route['usuarios_todos'] = 'usuarioController/index';
+
 //Productos
-$route['agregaproducto'] = 'Welcome/agregaproducto';
-$route['modificaproducto'] = 'Welcome/modificaproducto';
-$route['muestraelectrodomesticos'] = 'Welcome/muestraelectrodomesticos';
-$route['muestraeliminados'] = 'Welcome/muestraeliminados';
-$route['muestraproductos'] = 'Welcome/muestraproductos';
+
+$route['agregaproducto'] = 'productoController/form_agrega_producto';
+$route['muestraeliminados'] = 'productoController/muestra_eliminados';
+$route['muestraproductos'] = 'productoController/index';
 $route['verifico_nuevoproducto'] = 'productoController/agrega_producto';
+$route['productos_todos'] = 'productoController';
+$route['productos_elimina/(:num)'] = 'productoController/eliminar_producto/$1';
+$route['productos_modifica/(:num)'] = 'productoController/muestra_modificar/$1';
+$route['verifico_modificaproducto/(:num)'] = 'productoController/modificar_producto/$1';
+$route['productos_activa/(:num)'] = 'productoController/activar_producto/$1';
+
+//Carrito
+$route['carrito'] = 'carrito_controller/electrodomesticos';
+$route['carrito_agrega'] = 'carrito_controller/add';
+$route['comprar'] = 'carrito_controller/muestra_compra';
+$route['confirma_compra'] = 'carrito_controller/guarda_compra';
+$route['carrito_actualiza'] = 'carrito_controller/actualiza_carrito';
+$route['carrito_elimina/(:any)'] = 'carrito_controller/remove/$1';
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;

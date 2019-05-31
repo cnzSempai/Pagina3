@@ -3,13 +3,13 @@
 	<div class="container">
 		<div class="well">
 			<h1>No hay Electrodomesticos</h1>
-		</div>	
+		</div>
 	</div>
 
 <?php } else { ?>
 
 <div class="container-fluid">
-	
+
 	<h2 class="text-center">Electrodomésticos</h2>
 
 	<hr>
@@ -25,9 +25,9 @@
 						<h4><?php echo trim($row->descripcion); ?></h4>
 
 						<p>
-							<?php 
-								if ($row->stock < $row->stock_min && $row->stock > 0) {
-									echo 'Por debajo del valor minimo: '.$row->stock_min;
+							<?php
+								if ($row->stock < $row->stock_minimo && $row->stock > 0) {
+									echo 'Por debajo del valor minimo: '.$row->stock_minimo;
 								} elseif ($row->stock == 0) {
 									echo 'No hay unidades disponibles';
 								}else {
@@ -39,7 +39,7 @@
 						<p>Precio: $ <?php echo $row->precio_venta; ?> </p>
 
 						<p>
-						<?php 
+						<?php
 							if (($row->stock > 0) && ($session_data = $this->session->userdata('logged_in'))) {
 
 								// Envia los datos en forma de formulario para agregar al carrito
@@ -56,24 +56,24 @@
 		                            'value' => 'Comprar',
 		                            'name' => 'action'
 		                        	);
-		                        
+
 		                        echo form_submit($btn);
 		                        echo form_close();
 		               	?>
 		                    	</div>
-		               	<?php 
-								echo "<a href='#' class='btn btn-default'>Más Datos</a>";
+		               	<?php
+								echo "<a href='' class='btn btn-default'>Más Datos</a>";
 
 							}else{
-								echo "<a href='#' class='btn btn-default'>Mas Datos</a>";
+								echo "<a href='<?php echo base_url('carrito_agrega');?>' class='btn btn-default'>Mas Datos</a>";
 							}
-						?>	
+						?>
 						</p>
-						
+
 					</div>
 				</div>
 			</div>
-		<?php } ?>	
+		<?php } ?>
 	</div>
 	<hr>
 </div>

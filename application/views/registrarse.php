@@ -12,7 +12,7 @@
         <?php echo validation_errors(); ?>
 
         <p>
-          <h1>No posses una cuenta?</h1>
+          <h1>No posees una cuenta?</h1>
           <h2>Registrate</h2>
         </p>
 

@@ -5,22 +5,22 @@
 			<h1>No hay Productos</h1>
 		</div>
 		<?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?>
-			<a type="button" class="btn btn-success" href="<?php echo base_url('productos_agrega'); ?>">Agregar</a>
-			<a type="button" class="btn btn-danger" href="<?php echo base_url('productos_eliminados'); ?>">ELIMINADOS</a>
+			<a type="button" class="btn btn-success" href="<?php echo base_url('agregaproducto'); ?>">Agregar</a>
+			<a type="button" class="btn btn-danger" href="<?php echo base_url('muestraeliminados'); ?>">ELIMINADOS</a>
 			<br> <br>
 		<?php } ?>
 	</div>
 
 <?php } else { ?>
 
-	<div class="container">
+	<div class="container" id="tablaProd">
 		<div class="well">
 			<h1>Todos los Productos</h1>
 		</div>
-		<a type="button" class="btn btn-success" href="<?php echo base_url('productos_agrega'); ?>">Agregar</a>
-		<a type="button" class="btn btn-danger" href="<?php echo base_url('productos_eliminados'); ?>">ELIMINADOS</a>
+		<a type="button" class="btn btn-success" href="<?php echo base_url('agregaproducto'); ?>">Agregar</a>
+		<a type="button" class="btn btn-danger" href="<?php echo base_url('muestraeliminados'); ?>">ELIMINADOS</a>
 		<br> <br>
-		<table class="table table-bordered">
+		<table class="table table-bordered ">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -37,7 +37,7 @@
 				<tr>
 					<td><?php echo $row->id;  ?></td>
 					<td><?php echo $row->descripcion;  ?></td>
-					<td><?php echo $row->categoria_id;  ?></td>
+					<td><?php echo $row->id_categoria;  ?></td>
 					<td><?php echo $row->precio_venta;  ?></td>
 					<td><?php echo $row->stock;  ?></td>
 					<td><?php echo $row->eliminado;  ?></td>

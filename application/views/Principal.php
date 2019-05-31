@@ -28,192 +28,102 @@
   </a>
 </div>
 <!-- tarjetas -->
-<div class="container" id="contTarjetas">
+<div class="container" id="">
 	<!-- filas -->
 	<div class="row">
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
+		<?php if (!$productos) { ?>
 
-			<!--  zapatillas -->
-			<div class="card" >
-			  <img src="assets/img/card-1.png" class="card-img-top" alt="zapatillas">
-			  <div class="card-body">
-			    <p class="card-text">
-						ZAPATILLAS ADIDAS <br>
-						RUNNING STARLUX <br>
-						MUJER
-					</p>
-			  </div>
+			<div class="container">
+				<div class="well">
+					<h1>No hay Electrodomesticos</h1>
+				</div>
 			</div>
 
+		<?php } else { ?>
+
+		<div class="container-fluid">
+			<hr>
+
+			<div class="row text-center">
+				<?php foreach($productos->result() as $row){ ?>
+					<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
+                        <div  id="tarjetas "class="card col-fluid">
+                            <img src="<?php echo base_url($row->imagen); ?>" alt="" class="img-responsive img-thumbnail">
+                            <div class="card-body" id="contTarjetas">
+                                <p>
+        							<?php
+        								if ($row->stock < $row->stock_minimo && $row->stock > 0) {
+        									echo 'Por debajo del valor minimo: '.$row->stock_minimo;
+        								} elseif ($row->stock == 0) {
+        									echo 'No hay unidades disponibles';
+        								}else {
+        									echo 'Disponible:'.$row->stock.' unidades';
+        								}
+        							?>
+        						</p>
+
+        						<p> <?php echo $row->descripcion; ?> </p>
+        						<p> <?php
+														switch ($row->id_categoria) {
+															case '1':
+																echo "Hombre";
+																break;
+															case '2':
+																echo "Mujer";
+																break;
+															case '3':
+																echo "Niños";
+																break;
+
+															default:
+																	echo "Mixto";
+																break;
+														}
+										  ?> </p>
+        						<p>Precio: $ <?php echo $row->precio_venta; ?> </p>
+
+        						<p>
+                                <p>
+                                    <p>
+            						<?php
+            							if (($row->stock > 0) && ($session_data = $this->session->userdata('logged_in'))) {
+
+            								// Envia los datos en forma de formulario para agregar al carrito
+            		                        echo form_open('carrito_agrega');
+            		                        echo form_hidden('id', $row->id);
+            		                        echo form_hidden('descripcion', $row->descripcion);
+            		                        echo form_hidden('precio_venta', $row->precio_venta);
+            		                        echo form_hidden('stock', $row->stock);
+            		            	?>
+            		                    	<div>
+            		                <?php
+            		                        $btn = array(
+            		                            'class' => 'btn btn-success',
+            		                            'value' => 'Comprar',
+            		                            'name' => 'action'
+            		                        	);
+
+            		                        echo form_submit($btn);
+            		                        echo form_close();
+            		               	?>
+            		                    	</div>
+            		               	<?php
+
+            							}
+            						?>
+
+                            </div>
+                        </div>
+                    </div>
+				<?php } ?>
 			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- zapatillas -->
-			<div class="card">
-			  <img src="assets/img/card-2.png" class="card-img-top" alt="zapatillas">
-			  <div class="card-body">
-			    <p class="card-text">
-						ZAPATILLAS FILA <br>
-						RUNNING POWERFULL <br>
-						HOMBRE
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- zapatillas -->
-			<div class="card" >
-			  <img src="assets/img/card-3.png" class="card-img-top" alt="zapatillas">
-			  <div class="card-body">
-			    <p class="card-text">
-						BOTINES ADIDAS </br>
-						RUNNIG ULTRABOOST UNCAGED
-
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!--remeras -->
-			<div class="card" >
-			  <img src="assets/img/card-4.png" class="card-img-top" alt="remeras">
-			  <div class="card-body">
-			    <p class="card-text">
-						REMERA NIKE </br>
-						BASQUET NBA SAN ANTONIO SPURS <br>
-						DRI-FIT-HOMBRE
-
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- remeras -->
-			<div class="card" >
-			  <img src="assets/img/card-5.png" class="card-img-top" alt="remeras">
-			  <div class="card-body">
-			    <p class="card-text">
-						REMERA NIKE DRYFIT </br>
-						MEDALIST TRAINING <br>
-						HOMBRE
-
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- remeras -->
-			<div class="card" >
-			  <img src="assets/img/card-6.png" class="card-img-top" alt="remeras">
-			  <div class="card-body">
-			    <p class="card-text">
-						CAMISETA ADIDAS </br>
-						RIVER ALTERNATIVA 2019 <br>
-						FUTBOL
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- pantalones-->
-			<div class="card" >
-			  <img src="assets/img/card-7.png" class="card-img-top" alt="pantalones">
-			  <div class="card-body">
-			    <p class="card-text">
-						PANTALONES REEBOK </br>
-						MODA CLASSICS JOGGERS</br>
-						HOMBRE
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!--pantalones-->
-			<div class="card" >
-			  <img src="assets/img/card-8.png" class="card-img-top" alt="pantalones">
-			  <div class="card-body">
-			    <p class="card-text">
-						PANTALONES TOPPER </br>
-						MODA RTC SLIM UP </br>
-						HOMBRE
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- pantalones-->
-			<div class="card" >
-			  <img src="assets/img/card-9.png" class="card-img-top" alt="pantalones">
-			  <div class="card-body">
-			    <p class="card-text">
-						PANTALONES TOPPER </br>
-						TRAINING TECH FLEECE</br>
-						HOMBRE
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- camperas  -->
-			<div class="card" >
-			  <img src="assets/img/card-10.png" class="card-img-top" alt="camperas">
-			  <div class="card-body">
-			    <p class="card-text">
-						CAMPERA NIKE</br>
-						FC BARCELONA FUTBOL  <br>
-						ANTHM HOMBRE
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- camperas  -->
-			<div class="card" >
-			  <img src="assets/img/card-11.png" class="card-img-top" alt="camperas">
-			  <div class="card-body">
-			    <p class="card-text">
-							CAMPERA ADIDAS</br>
-							FUTBOL RIVER PLATE <br>
-							HOMBRE
-					</p>
-			  </div>
-			</div>
-
-			</div>
-		<div class="col-md-6 col-lg-4 col-xl-3 mt-4 mb-4">
-
-			<!-- camperas -->
-			<div class="card" >
-			  <img src="assets/img/card-12.png" class="card-img-top" alt="camperas">
-			  <div class="card-body">
-			    <p class="card-text">
-					CAMPERA NIKE</br>
-					MODA HOODIE MESH  <br>
-					MUJER
-					</p>
-			  </div>
-			</div>
-
-			</div>
+			<hr>
 		</div>
+		<?php } ?>
+
 	</div>
+</div>
+
+
 
 </main>

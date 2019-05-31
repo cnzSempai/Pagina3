@@ -22,13 +22,13 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<?php echo form_label('Categoria:', 'categoria_id'); ?>
-					<?php echo form_input(['name' => 'categoria_id',
-													'id' => 'categoria_id',
+					<?php echo form_label('Categoria:', 'id_categoria'); ?>
+					<?php echo form_input(['name' => 'id_categoria',
+													'id' => 'id_categoria',
 													'class' => 'form-control',
 													'placeholder' => '1- Electrodomesticos - 2-Muebles',
-													'value'=>"$categoria_id"]); ?>
-					<?php echo form_error('categoria_id'); ?>
+													'value'=>"$id_categoria"]); ?>
+					<?php echo form_error('id_categoria'); ?>
 				</div>
 			</div>
 		</div>
@@ -70,13 +70,13 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<?php echo form_label('Stock minimo:', 'stock_min'); ?>
-					<?php echo form_input(['name' => 'stock_min',
-													'id' => 'stock_min',
+					<?php echo form_label('Stock minimo:', 'stock_minimo'); ?>
+					<?php echo form_input(['name' => 'stock_minimo',
+													'id' => 'stock_minimo',
 													'class' => 'form-control',
 													'placeholder' => 'Stock Minimo',
-													'value'=>"$stock_min"]); ?>
-					<?php echo form_error('stock_min'); ?>
+													'value'=>"$stock_minimo"]); ?>
+					<?php echo form_error('stock_minimo'); ?>
 				</div>
 			</div>
 		</div>
