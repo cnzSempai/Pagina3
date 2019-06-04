@@ -90,10 +90,8 @@
                     Usuarios
                   </a>
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php echo base_url('agregaproducto');?>">
+                    <a class="dropdown-item" href="<?php echo base_url('agregausuario');?>">
                       Agregar Usuario</a>
-                    <a class="dropdown-item" href="<?php echo base_url('modificaproducto');?>">
-                      Modificar Usuario</a>
                     <a class="dropdown-item" href="<?php echo base_url('usuarios_todos');?>">
                       Ver todos los Usuarios</a>
                     <a class="dropdown-item" href="<?php echo base_url('muestraeliminados');?>">
@@ -138,7 +136,7 @@
                 </a>
                 <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="<?php echo base_url('comprar');?>">Mis Compras</a>
-                  <a class="dropdown-item" href="<?php echo base_url('misdatos');?>">Mis datos</a>
+                  <a class="dropdown-item" href="<?php echo base_url("misdatos");?>">Mis datos</a>
                   <a class="dropdown-item" href="<?php echo base_url('cerrar_sesion');?>">Cerrar sesión</a>
                 </div>
               </li>

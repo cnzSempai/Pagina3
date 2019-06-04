@@ -38,6 +38,27 @@ function index()
 }
 
 
+
+function datosusuario()
+{
+    if($this->_veri_log()){
+    $data = array('titulo' => 'Usuarios');
+
+    $session_data = $this->session->userdata('logged_in');
+    $data['perfil_id'] = $session_data['perfil_id'];
+    $data['nombre'] = $session_data['nombre'];
+
+    $dat = array('usuario' => $this->usuario_model->date_usuarios() );
+
+    $this->load->view('front/head_view', $data);
+    $this->load->view('front/navbar_view');
+    $this->load->view('muestraDatos', $dat);
+    $this->load->view('front/footer_view');
+    }else{
+    redirect('login', 'refresh'); }
+}
+
+
 /**
 * Muestra formulario para agregar usuario
 */
@@ -65,12 +86,12 @@ function form_agrega_usuario()  	//Si se modifica, modificar (agrega_usuario) ta
 function agrega_usuario()
 {
     //Genero las reglas de validacion
-    $this->form_validation->set_rules('usuario', 'Usuario', 'required|is_unique[usuarios.nombre]');
-    $this->form_validation->set_rules('apellido', 'Apellido', 'required');
     $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+    $this->form_validation->set_rules('apellido', 'Apellido', 'required');
     $this->form_validation->set_rules('email', 'Email', 'required|is_unique[usuarios.email]');
-    $this->form_validation->set_rules('password', 'Password', 'required');
-    $this->form_validation->set_rules('filename', 'Imagen', 'required|callback__image_upload');
+    $this->form_validation->set_rules('usuario', 'Usuario', 'required|is_unique[usuarios.nombre]');
+    $this->form_validation->set_rules('password', 'password', 'required');
+    $this->form_validation->set_rules('perfil_id', 'perfil_id', 'required');
 
     //Mensaje de error si no pasan las reglas
     $this->form_validation->set_message('required',
@@ -96,79 +117,24 @@ function agrega_usuario()
         $this->load->view('front/navbar_view');
         $this->load->view('agregausuario');
         $this->load->view('front/footer_view');
-    }
-    else
-    {
-        $this->_image_upload();
-    }
-}
+    }else {
+      $data = array(
+          'nombre'=>$this->input->post('nombre',true),
+          'apellido'=>$this->input->post('apellido',true),
+          'email'=>$this->input->post('email',true),
+          'usuario'=>$this->input->post('usuario',true),
+          'pass'=>$this->input->post('password',true),
+          'perfil_id'=>$this->input->post('perfil_id',true),
+          'baja'=>'NO',
+      );
 
-/**
-* Obtiene los datos del archivo imagen.
-* Permite archivos gif, jpg, png
-* Verifica si los datos son correcto en conjunto con la imagen y lo inserta en la tabla correspondiente
-* En la tabla guarda la URL de donde se encuentra la imagen.
-*/
-function _image_upload()
-{
-    $this->load->library('upload');
+      $usuarios = $this->usuario_model->add_usuario($data);
 
-    //Comprueba si hay un archivo cargado
-    if (!empty($_FILES['filename']['name']))
-    {
-        // Especifica la configuración para el archivo
-        $config['upload_path'] = 'assets/img/usuarios/';
-        $config['allowed_types'] = 'gif|jpg|JPEG|png';
-
-        $config['max_size'] = '2048';
-        $config['max_width']  = '1024';
-        $config['max_height']  = '768';
-
-        // Inicializa la configuración para el archivo
-        $this->upload->initialize($config);
-        //
-        if ($this->upload->do_upload('filename'))
-        {
-            // Mueve archivo a la carpeta indicada en la variable $data
-            $data = $this->upload->data();
-
-            // Path donde guarda el archivo..
-            $url ="assets/img/usuarios/".$_FILES['filename']['name'];
-
-            // Array de datos para insertar en productos
-            $data = array(
-                'nombre'=>$this->input->post('nombre',true),
-                'apellido'=>$this->input->post('apellido',true),
-                'email'=>$this->input->post('email',true),
-                'usuario'=>$this->input->post('usuario',true),
-                'password'=>$this->input->post('password',true),
-                'perfil_id'=>$this->input->post('perfil_id',true),
-                'baja'=>'NO',
-                'imagen'=>$url,
-            );
-
-            $usuarios = $this->usuario_model->add_usuario($data);
-
-            redirect('usuarios_todos', 'refresh');
-
-            return TRUE;
-        }
-        else
-        {
-            //Mensaje de error si no existe imagen correcta
-            $imageerrors = '<div class="alert alert-danger">El campo %s es incorrecta, extensión incorrecto o excede el tamaño permitido que es de: 2MB </div>';//$this->upload->display_errors();
-            $this->form_validation->set_message('_image_upload',$imageerrors );
-
-            return false;
-        }
-
-    }
-    else
-    {
-        //redirect('verifico_nuevoproducto');
+      redirect('usuarios_todos', 'refresh');
 
     }
 }
+
 
 /**
 * Muestra para modificar un usuario
@@ -185,9 +151,8 @@ function muestra_modificar()
             $apellido = $row->apellido;
             $email = $row->email;
             $usuario = $row->usuario;
-            $password = $row->password;
+            $pass = $row->pass;
             $perfil_id = $row->perfil_id;
-            $imagen = $row->imagen;
         }
 
         $dat = array('usuario' =>$datos_usuario,
@@ -196,9 +161,8 @@ function muestra_modificar()
             'apellido'=>$apellido,
             'email'=>$email,
             'usuario'=>$usuario,
-            'password'=>$password,
-            'perfil_id'=>$perfil_id,
-            'imagen'=>$imagen
+            'pass'=>$pass,
+            'perfil_id'=>$perfil_id
         );
     }
     else
@@ -213,7 +177,7 @@ function muestra_modificar()
 
     $this->load->view('front/head_view', $data);
     $this->load->view('front/navbar_view');
-    $this->load->view('modificausuario', $dat);
+    $this->load->view('modificarDatos', $dat);
     $this->load->view('front/footer_view');
     }else{
     redirect('login', 'refresh');}
@@ -265,12 +229,22 @@ function modificar_usuario()
 
         $this->load->view('front/head_view', $data);
         $this->load->view('front/navbar_view');
-        $this->load->view('modificausuario', $dat);
+        $this->load->view('modificarDatos', $dat);
         $this->load->view('front/footer_view');
     }
     else
     {
-        $this->_image_modif();
+      $dat = array(
+          'id'=>$id,
+          'usuario'=>$this->input->post('usuario',true),
+          'perfil_id'=>$this->input->post('perfil_id',true),
+          'nombre'=>$this->input->post('nombre',true),
+          'apellido'=>$this->input->post('apellido',true),
+          'email'=>$this->input->post('email',true),
+          'password'=>$this->input->post('password',true),
+      );
+      $this->usuario_model->update_usuario($id, $dat);
+      redirect('usuarios_todos', 'refresh');
     }
 
 }
@@ -292,15 +266,7 @@ function _image_modif()
     $id = $this->uri->segment(2);
 
     // Array de datos para obtener datos de libros sin la imagen
-    $dat = array(
-        'id'=>$id,
-        'usuario'=>$this->input->post('usuario',true),
-        'perfil_id'=>$this->input->post('perfil_id',true),
-        'nombre'=>$this->input->post('nombre',true),
-        'apellido'=>$this->input->post('apellido',true),
-        'email'=>$this->input->post('email',true),
-        'password'=>$this->input->post('password',true),
-    );
+
 
     // Si la iamgen esta vacia se asume que no se modifica
     if (!empty($_FILES['filename']['name']))
@@ -341,10 +307,10 @@ function _image_modif()
     }
     else
     {
-        $this->Producto_modelo->update_usuario($id, $dat);
-        redirect('productos_todos', 'refresh');
+
     }
 }
+
 
 /**
 * Obtiene los datos del usuario a eliminar

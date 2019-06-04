@@ -66,7 +66,16 @@ $route['verifico_usuario'] = 'loginController';
 $route['verifico_consulta'] = 'consultaController';
 $route['cerrar_sesion'] = 'loginController/cerrar_sesion';
 $route['registrarse'] = 'registroController/index';
+
 $route['usuarios_todos'] = 'usuarioController/index';
+$route['misdatos'] = 'usuarioController/datosusuario';
+$route['verifico_nuevousuario'] = 'usuarioController/agrega_usuario';
+$route['agregausuario'] = 'usuarioController/form_agrega_usuario';
+$route['usuarios_elimina/(:num)'] = 'usuarioController/eliminar_usuario/$1';
+$route['usuarios_modifica/(:any)'] = 'usuarioController/muestra_modificar/$1';
+$route['verifico_modificausuario/(:num)'] = 'usuarioController/modificar_usuario/$1';
+$route['usuarios_activa/(:num)'] = 'usuarioController/activar_usuario/$1';
+$route['muestraeliminados'] = 'usuarioController/muestra_eliminados';
 
 //Productos
 
