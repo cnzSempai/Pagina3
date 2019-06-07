@@ -19,7 +19,7 @@ class Carrito_controller extends CI_Controller {
 	//Este método llama a la página Electrodomésticos, con el carrito si está logueado
 	public function electrodomesticos()
 	{
-		$dat = array('productos' => $this->Producto_modelo->get_electrodomesticos());
+		$dat = array('productos' => $this->Producto_modelo->get_productos());
 
 		$data = array('titulo' => 'Electrodomesticos');
 		$session_data = $this->session->userdata('logged_in');
@@ -38,7 +38,7 @@ class Carrito_controller extends CI_Controller {
 	}
 	public function electrodomesticosPrincipal()
 	{
-		$dat = array('productos' => $this->Producto_modelo->get_electrodomesticos());
+		$dat = array('productos' => $this->Producto_modelo->get_productos());
 
 		$data = array('titulo' => 'Electrodomesticos');
 		$session_data = $this->session->userdata('logged_in');

@@ -2,7 +2,7 @@
 
 	<div class="container">
 		<div class="well">
-			<h1>No hay Electrodomesticos</h1>
+			<h1>No hay Indumentarias</h1>
 		</div>
 	</div>
 
@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
 
-	<h2 class="text-center">Electrodomésticos</h2>
+	<h2 class="text-center">Indumentarias</h2>
 
 	<hr>
 

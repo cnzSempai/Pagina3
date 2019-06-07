@@ -53,7 +53,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 
-			$dat = array('productos' => $this->Producto_modelo->get_electrodomesticos() );
+			$dat = array('productos' => $this->Producto_modelo->get_productos() );
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view', $data);
@@ -167,9 +167,6 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
                 $config['upload_path'] = 'assets/img/productos/';
                 $config['allowed_types'] = 'gif|jpg|JPEG|png';
 
-                $config['max_size'] = '2048';
-                $config['max_width']  = '1024';
-                $config['max_height']  = '768';
 
                 // Inicializa la configuración para el archivo
                 $this->upload->initialize($config);
@@ -444,10 +441,52 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			redirect('login', 'refresh');}
 		}
 
+		function listar_ventas()
+	    {
+             if($this->_veri_log()){
+			$data = array('titulo' => 'Ventas');
+
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
 
 
+			$dat = array('ventas_cabecera' => $this->Producto_modelo->get_ventas_cabecera());
+
+			$this->load->view('front/head_view',$data);
+			$this->load->view('front/navbar_view',$data);
+			$this->load->view('muestraventas',$dat);
+			$this->load->view('front/footer_view');
+            }else{
+			redirect('login', 'refresh');
+            }
+         }
+
+
+        function muestra_detalle($id)
+		{
+             if($this->_veri_log()){
+			$data = array('titulo' => 'Detalle');
+
+				$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+
+			$dat = array('ventas_detalle' => $this->Producto_modelo->get_ventas_detalle($id));
+
+				$this->load->view('front/head_view', $data);
+			$this->load->view('front/navbar_view', $data);
+			$this->load->view('muestradetalle', $dat);
+			$this->load->view('front/footer_view');
+            }else{
+			redirect('login', 'refresh');
+            }
+        }
 
 
 	}
+
+
+
 /* End of file
 */

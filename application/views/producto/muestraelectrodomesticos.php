@@ -2,7 +2,7 @@
 
 	<div class="container">
 		<div class="well">
-			<h1>No hay Electrodomesticos</h1>
+			<h1>No hay Indumentarias</h1>
 		</div>
 
 		<?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?>
@@ -16,7 +16,7 @@
 
 	<div class="container">
 		<div class="well">
-			<h1>Todos los Electrodomésticos</h1>
+			<h1>Todas las Indumentarias</h1>
 		</div>
 		<a type="button" class="btn btn-success" href="<?php echo base_url('agregaproducto'); ?>">Agregar</a>
 		<table class="table table-bordered">

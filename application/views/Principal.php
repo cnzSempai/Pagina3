@@ -9,13 +9,13 @@
 	<!-- carrusel -->
   <div class="carousel-inner">
     <div class="carousel-item active ">
-      <img src="assets/img/carro-1.png" class="d-block w-100" alt="botines">
+      <img src="<?php echo base_url('assets/img/carro-1.png'); ?>" class="d-block w-100" alt="botines">
     </div>
     <div class="carousel-item">
-      <img src="assets/img/river.jpg" class="d-block w-100" alt="muñequera">
+      <img src="<?php echo base_url('assets/img/river.jpg'); ?>" class="d-block w-100" alt="muñequera">
     </div>
     <div class="carousel-item">
-      <img src="assets/img/carro-2.png" class="d-block w-100" alt="saco">
+      <img src="<?php echo base_url('assets/img/carro-2.png') ?>" class="d-block w-100" alt="saco">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -35,7 +35,7 @@
 
 			<div class="container">
 				<div class="well">
-					<h1>No hay Electrodomesticos</h1>
+					<h1>No hay Indumentarias</h1>
 				</div>
 			</div>
 
@@ -86,7 +86,7 @@
                                 <p>
                                     <p>
             						<?php
-            							if (($row->stock > 0) && ($session_data = $this->session->userdata('logged_in'))) {
+            							if (($row->stock > 0) && ($session_data = $this->session->userdata('logged_in'))and ($session_data['id'] == '2' )) {
 
             								// Envia los datos en forma de formulario para agregar al carrito
             		                        echo form_open('carrito_agrega');

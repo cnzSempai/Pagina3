@@ -8,7 +8,7 @@ class Welcome extends CI_Controller {
 
 		$this->load->model('carrito_model');
 		$this->load->model('Producto_modelo');
-        $this->load->library('cart');
+    $this->load->library('cart');
 	}
 
 
@@ -16,7 +16,7 @@ class Welcome extends CI_Controller {
 	{
 		//$this->load->view('principal.php');
 		$data = array('titulo' => 'CRISport');
-		$dat = array('productos' => $this->Producto_modelo->get_electrodomesticos());
+		$dat = array('productos' => $this->Producto_modelo->get_productos());
 
 		$session_data = $this->session->userdata('logged_in');
 		$data['perfil_id'] = $session_data['perfil_id'];
@@ -24,7 +24,23 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('front/head_view',$data);
 		$this->load->view('front/navbar_view');
-		$this->load->view('Principal',$dat);
+		$this->load->view('principal',$dat);
+		$this->load->view('front/footer_view');
+
+	}
+	public function categoriasProd($categoria)
+	{
+		//$this->load->view('principal.php');
+		$data = array('titulo' => 'CRISport');
+		$dat = array('productos' => $this->Producto_modelo->get_categorias($categoria));
+
+		$session_data = $this->session->userdata('logged_in');
+		$data['perfil_id'] = $session_data['perfil_id'];
+		$data['nombre'] = $session_data['nombre'];
+
+		$this->load->view('front/head_view',$data);
+		$this->load->view('front/navbar_view');
+		$this->load->view('principal',$dat);
 		$this->load->view('front/footer_view');
 
 	}

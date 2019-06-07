@@ -1,7 +1,13 @@
 <div class="container">
 <div class="col-sm-10 col-md-10">
 
-	<?php echo form_open_multipart("verifico_modificausuario/$id", ['class' => 'form-signin', 'role' => 'form']); ?>
+	<?php
+	if($id==1){
+					echo form_open_multipart("verifico_modificausuarios/$id", ['class' => 'form-signin', 'role' => 'form']);
+	}else{
+					echo form_open_multipart("verifico_modificaperfil/$id", ['class' => 'form-signin', 'role' => 'form']);
+	}
+	  ?>
 		<div class="row">
 	   		<div class="col-md-6">
 				<div class="form-group">
@@ -54,24 +60,13 @@
 		<div class="row">
 	   		<div class="col-md-6">
 				<div class="form-group">
-					<?php echo form_label('Contraseña:', 'contraseña'); ?>
-					<?php echo form_input(['name' => 'contraseña',
-													'id' => 'contraseña',
+					<?php echo form_label('Contraseña:', 'pass'); ?>
+					<?php echo form_input(['name' => 'pass',
+													'id' => 'pass',
 													'class' => 'form-control',
 													'placeholder' => 'Contraseña',
-													'value'=>"$contraseña"]); ?>
-					<?php echo form_error('contraseña'); ?>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-group">
-					<?php echo form_label('Perfil_id:', 'perfil_id'); ?>
-					<?php echo form_input(['name' => 'perfil_id',
-													'id' => 'perfil_id',
-													'class' => 'form-control',
-													'placeholder' => 'Perfil_id',
-													'value'=>"$perfil_id"]); ?>
-					<?php echo form_error('perfil_id'); ?>
+													'value'=>"$pass"]); ?>
+					<?php echo form_error('pass'); ?>
 				</div>
 			</div>
 		</div>

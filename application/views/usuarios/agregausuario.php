@@ -1,10 +1,5 @@
 <div class="container">
-	<div class="well col-lg-8">
-		<h2>Cargar nuevo producto</h2>
-		<h6> <b>Acepta imagenes gif, jpg, jpeg, png</b></h6>
-		<h6> <b>Tamaño maximo de la imagen 2MB</b></h6>
-	</div>
-
+	
 	<div class="row">
 		<div class="col-lg-8">
 

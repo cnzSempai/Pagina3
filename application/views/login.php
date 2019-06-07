@@ -13,10 +13,10 @@
     <div class="col-lg-4 col-md-5">
     <div class="form-container">
         <div class="media-container-column" data-form-type="formoid">
-            <div data-form-alert="" hidden="" class="align-center">Thanks for filling out the form!</div>
+            <div data-form-alert="" hidden="" class="align-center">Gracias por rellenar el formulario!</div>
 
            <div class="media-container-column" data-form-type="formoid">
-            <div data-form-alert="" hidden="" class="align-center">Thanks for filling out the form!</div>
+            <div data-form-alert="" hidden="" class="align-center">Gracias por rellenar el formulario!</div>
              <?php echo validation_errors(); ?>
 
             <?php echo form_open('verifico_usuario', ['class' => 'form-signin', 'role' => 'form']); ?> <br>

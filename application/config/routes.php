@@ -53,6 +53,7 @@ $route['default_controller'] = 'Welcome';
 //pagina
 
 $route['principal'] = 'Welcome/index';
+$route['categoriasProd/(:num)'] = 'Welcome/categoriasProd/$1';
 $route['quienes_somos'] = 'Welcome/quienes_somos';
 $route['terminos_y_condiciones'] = 'Welcome/terminos_y_condiciones';
 $route['Contactanos'] = 'Welcome/Contactanos';
@@ -68,12 +69,14 @@ $route['cerrar_sesion'] = 'loginController/cerrar_sesion';
 $route['registrarse'] = 'registroController/index';
 
 $route['usuarios_todos'] = 'usuarioController/index';
-$route['misdatos'] = 'usuarioController/datosusuario';
+$route['misdatos/(:num)'] = 'usuarioController/datosusuario/$1';
 $route['verifico_nuevousuario'] = 'usuarioController/agrega_usuario';
 $route['agregausuario'] = 'usuarioController/form_agrega_usuario';
 $route['usuarios_elimina/(:num)'] = 'usuarioController/eliminar_usuario/$1';
-$route['usuarios_modifica/(:any)'] = 'usuarioController/muestra_modificar/$1';
-$route['verifico_modificausuario/(:num)'] = 'usuarioController/modificar_usuario/$1';
+$route['usuarios_modifica/(:num)'] = 'usuarioController/muestra_modificar/$1';
+$route['verifico_modificausuarios/(:num)'] = 'usuarioController/modificar_usuario/$1';
+$route['usuarios_elimina/(:num)'] = 'usuarioController/eliminar_usuario/$1';
+$route['verifico_modificaperfil/(:num)'] = 'usuarioController/modificar_perfil/$1';
 $route['usuarios_activa/(:num)'] = 'usuarioController/activar_usuario/$1';
 $route['muestraeliminados'] = 'usuarioController/muestra_eliminados';
 
@@ -96,6 +99,10 @@ $route['comprar'] = 'carrito_controller/muestra_compra';
 $route['confirma_compra'] = 'carrito_controller/guarda_compra';
 $route['carrito_actualiza'] = 'carrito_controller/actualiza_carrito';
 $route['carrito_elimina/(:any)'] = 'carrito_controller/remove/$1';
+
+//consultas
+$route['consultas']= 'productoController/listar_ventas';
+$route['muestradetalle/(:num)']= 'productoController/muestra_detalle/$1';
 
 $route['404_override'] = '';
 

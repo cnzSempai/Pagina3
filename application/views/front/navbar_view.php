@@ -13,55 +13,20 @@
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
-        <div class="btn-group ml-4">
-          <button type="button"id="botonMenu"  class="btn btn-danger dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <a href="<?php echo base_url('productosHombre') ?>"></a>
-              HOMBRE
+          <button type="button"id="botonMenu"  class="btn btn-danger ml-2 mr-2"  aria-haspopup="true" aria-expanded="false">
+              <a href="<?php echo base_url("categoriasProd/1") ?>">Hombre</a>
+
             </button>
-            <div class="dropdown-menu  " style="background: #BD2130;">
-              <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Calzado</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Indumentaria</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Accesorios</a>
-        </div>
-        </div>
-        <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        MUJER
+        <button type="button" id="botonMenu" class="btn btn-danger  mr-2"  aria-haspopup="true" aria-expanded="false">
+          <a href="<?php echo base_url("categoriasProd/2") ?>">  Mujer</a>
+
         </button>
-        <div class="dropdown-menu" style="background: #BD2130;">
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Calzado</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Indumentaria</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Accesorios</a>
-        </div>
-        </div>
-        <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        NIÑOS
+        <button type="button" id="botonMenu" class="btn btn-danger  mr-2"  aria-haspopup="true" aria-expanded="false">
+          <a href="<?php echo base_url("categoriasProd/3") ?>">Niños</a>
+
         </button>
-        <div class="dropdown-menu" style="background: #BD2130;">
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Calzado</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Indumentaria</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Accesorios</a>
-        </div>
-        </div>
-        <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        DEPORTES
-        </button>
-        <div class="dropdown-menu "  style="background: #BD2130;">
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Calzado</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Indumentaria</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color : #fff;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'" href="#">Accesorios</a>
-        </div>
-        </div>
+
+
 
 	    </ul>
       <!-- MENU PARA ADMINISTRADOR -->
@@ -72,15 +37,15 @@
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Juegos
+                    Productos
                   </a>
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php echo base_url('agregaproducto');?>">
-                      Agregar juego</a>
+                      Agregar producto</a>
                       <a class="dropdown-item" href="<?php echo base_url('muestraeliminados');?>">
-                        Ver juegos eliminados</a>
+                        Ver productos eliminados</a>
                     <a class="dropdown-item" href="<?php echo base_url('muestraproductos');?>">
-                      Ver todos los Juegos</a>
+                      Ver todos los Productos</a>
 
                   </div>
                 </li>
@@ -90,8 +55,6 @@
                     Usuarios
                   </a>
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php echo base_url('agregausuario');?>">
-                      Agregar Usuario</a>
                     <a class="dropdown-item" href="<?php echo base_url('usuarios_todos');?>">
                       Ver todos los Usuarios</a>
                     <a class="dropdown-item" href="<?php echo base_url('muestraeliminados');?>">
@@ -100,20 +63,13 @@
                 </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Reportes
-              </a>
-              <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="<?php echo base_url('ventas');?>">
-                  Ventas</a>
-                <a class="dropdown-item" href="<?php echo base_url('consultas');?>">
-                  Consultas</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <b><i class="fa fa-user"></i> Bienvenido <?= $session_data['nombre'] ?></b>
               </a>
               <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="<?php echo base_url('consultas');?>">
+                    Ventas</a>
+                  <a class="dropdown-item" href="<?php echo base_url('consultas');?>">
+                    Consultas</a>
                 <a class="dropdown-item" href="<?php echo base_url('cerrar_sesion');?>">Cerrar sesión</a>
               </div>
             </li>
@@ -135,8 +91,9 @@
                 <b><i class="fa fa-user"></i> Bienvenido <?= $session_data['nombre'] ?></b>
                 </a>
                 <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <?php $row=$session_data['id'] ?>
                   <a class="dropdown-item" href="<?php echo base_url('comprar');?>">Mis Compras</a>
-                  <a class="dropdown-item" href="<?php echo base_url("misdatos");?>">Mis datos</a>
+                  <a class="dropdown-item" href="<?php echo base_url("misdatos/$row");?>">Mis datos</a>
                   <a class="dropdown-item" href="<?php echo base_url('cerrar_sesion');?>">Cerrar sesión</a>
                 </div>
               </li>
@@ -157,7 +114,9 @@
 
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search" style="">
-              <button class="btn btn-outline-success my-2 my-sm-0" style="color: #323232;  background:#BD2130; border-color: #BD2130;" type="submit">Buscar</button>
+              <button class="btn btn-outline-success my-2 my-sm-0" style="color: #323232;  background:#BD2130; border-color: #BD2130;" type="submit">
+                <img src="assets/img/search.png" alt="">
+              </button>
             </form>
 
 	</div>
