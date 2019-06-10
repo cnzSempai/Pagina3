@@ -22,8 +22,8 @@ if ($ver->num_rows() == 0) { ?>
 					<th>APELLIDO</th>
 					<th>EMAIL</th>
 					<th>ASUNTO</th>
-					<th>MENSAJE
-						<a class="btn-light icon-mail4"  role="button"></a></th>
+					<th>MENSAJE</th>
+					<th>ACCION</th>
 
 
 				</tr>
@@ -37,7 +37,7 @@ if ($ver->num_rows() == 0) { ?>
 					<td><?php echo $row->email;  ?></td>
 					<td><?php echo $row->asunto;  ?></td>
 					<td><?php echo $row->mensaje;  ?></td>
-					<td><a class="btn-light icon-bin" href="<?php echo base_url("consultas_elimina/$row->id");?>" role="button"></a></td>
+					<td><a href="<?php echo base_url("consultas_elimina/$row->id");?>" >Eliminar</a></td>
 					</tr>
 				<?php } ?>
 			</tbody>

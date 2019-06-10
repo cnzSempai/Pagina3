@@ -20,6 +20,25 @@
 #agregaproducto{
   background-image: url("../img/argentina.jpg");
 }
+#mainEliminados{
+  background-image: url("../img/derrota.jpg");
+}
+#mainLogin{
+  background-image: url("../img/login.jpg");
+}
+
+.form-container{
+  background-image: url("../img/azul.jpg");
+  margin: 4px;
+  padding: 4px;
+}
+
+.skip-links {
+    display: table-cell;
+    white-space: nowrap;
+    clear: both;
+    vertical-align: middle;
+}
 
 #contProductos{
   align:right;

@@ -30,10 +30,8 @@ class Carrito_controller extends CI_Controller {
 		$this->load->view('front/navbar_view', $data);
 		if ($session_data)
 		{
-			$this->load->view('carrito/carritoparte' );
+			$this->load->view('carrito/carritoparte' ,$dat);
 		}
-
-		$this->load->view('producto/electrodomesticos', $dat);
 		$this->load->view('front/footer_view');
 	}
 	public function electrodomesticosPrincipal()

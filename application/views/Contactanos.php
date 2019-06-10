@@ -80,7 +80,7 @@
 
   </div>
 
-<div class="col-fluid">
+<div style="background:white;" class="col-fluid">
   <div class="col-fluid">
     <button class="btn btn-outline-danger my-0 my-sm-0 mr-3 ml-3" type="submit">
       <a href="#" target="_blank">

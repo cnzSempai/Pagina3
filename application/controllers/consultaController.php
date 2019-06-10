@@ -47,7 +47,7 @@ class consultaController extends CI_controller
 				//Redirecciono a la pagina de perfil
 				$this->form_validation->set_message('required',
 											'<div class="alert alert-danger">MENSAJE ENVIADO CORRECTAMENTE</div>');
-				redirect('contacto');
+				redirect('Contactanos');
 			}
 	}
 
@@ -89,7 +89,7 @@ class consultaController extends CI_controller
 		);
 
 		$this->consulta_model->delete_consulta($id, $data);
-		redirect('verconsultas', 'refresh');
+		redirect('consultas', 'refresh');
 	}
 
 }

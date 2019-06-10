@@ -78,7 +78,7 @@ $route['verifico_modificausuarios/(:num)'] = 'usuarioController/modificar_usuari
 $route['usuarios_elimina/(:num)'] = 'usuarioController/eliminar_usuario/$1';
 $route['verifico_modificaperfil/(:num)'] = 'usuarioController/modificar_perfil/$1';
 $route['usuarios_activa/(:num)'] = 'usuarioController/activar_usuario/$1';
-$route['muestraeliminados'] = 'usuarioController/muestra_eliminados';
+$route['muestrausuarioseliminados'] = 'usuarioController/muestra_eliminados';
 
 //Productos
 
@@ -91,6 +91,7 @@ $route['productos_elimina/(:num)'] = 'productoController/eliminar_producto/$1';
 $route['productos_modifica/(:num)'] = 'productoController/muestra_modificar/$1';
 $route['verifico_modificaproducto/(:num)'] = 'productoController/modificar_producto/$1';
 $route['productos_activa/(:num)'] = 'productoController/activar_producto/$1';
+$route['busqueda'] = 'productoController/busqueda';
 
 //Carrito
 $route['carrito'] = 'carrito_controller/electrodomesticos';
@@ -103,6 +104,7 @@ $route['carrito_elimina/(:any)'] = 'carrito_controller/remove/$1';
 //consultasa
 $route['ventas']= 'productoController/listar_ventas';
 $route['consultas']= 'consultaController/listar_consultas';
+$route['consultas_elimina/(:num)'] = 'consultaController/eliminar_consulta/$1';
 $route['muestradetalle/(:num)']= 'productoController/muestra_detalle/$1';
 
 $route['404_override'] = '';

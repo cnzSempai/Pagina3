@@ -23,12 +23,24 @@
         </button>
 	    </ul>
 
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search" style="">
-                    <button class="btn btn-outline-success my-2 my-sm-0" style="color: #323232;  background:#BD2130; border-color: #BD2130;" type="submit">
-                      <img src=<?php echo base_url('assets/img/search.png'); ?> alt="">
-                    </button>
-                  </form>
+			<div class="row">
+
+				<div class="col-12">
+						<?php echo form_open_multipart("busqueda", ['class' => 'form-signin', 'role' => 'form']); ?>
+						<div class="form-group">
+								<?php echo form_label('', 'texto'); ?>
+								<?php echo form_input(['name' => 'busqueda',
+								'id' => 'busqueda',
+								'class' => 'form-control',
+								'placeholder' => 'Buscar',
+								'autofocus'=>'autofocus',
+								'value'=>set_value('busqueda')]); ?>
+								<?php echo form_error('texto'); ?>
+								<?php echo form_close(); ?>
+						</div>
+
+		</div>
+</div>
       <!-- MENU PARA ADMINISTRADOR -->
         <?php if(($this->session->userdata('logged_in')) and ($session_data['perfil_id'] == '1'))
         {
@@ -58,7 +70,7 @@
                   <div id="navDetalles" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php echo base_url('usuarios_todos');?>">
                       Ver todos los Usuarios</a>
-                    <a class="dropdown-item" href="<?php echo base_url('muestraeliminados');?>">
+                    <a class="dropdown-item" href="<?php echo base_url('muestrausuarioseliminados');?>">
                       Ver Usuarios eliminados</a>
                   </div>
                 </li>
@@ -80,10 +92,13 @@
         } else if (($this->session->userdata('logged_in')) and ($session_data['perfil_id'] == '2'))
         {
             ?>
+
             <ul  class="navbar-nav ml-auto">
 
               <li id="navDetalles" class="nav-item">
+
                 <a class="nav-link" href="<?php echo base_url('carrito');?>">
+									<img src="<?php echo base_url('assets/img/carrito.png'); ?>" alt="">
                   <i class="fa fa-shopping-cart"></i> Mi Carrito
                 </a>
               </li>
@@ -106,9 +121,10 @@
             ?>
 
             <ul  class="navbar-nav ml-auto">
-              <li id="navDetalles" class="nav-item mr-2" data-toggle="modal" data-target="#modalLogin">
-                  <a href="<?php echo base_url('login');?>">Login</a>
-              </li>
+
+							<a href="<?php echo base_url('login');?>">
+							<center><img src="<?php echo base_url('assets/img/sesion.png');?>" alt=""></center><h6>Iniciá sesión</h6></a>
+
             </ul>
 
             <?php

@@ -24,6 +24,21 @@ class Producto_modelo extends CI_Model{
         }
     }
 
+    function busqueda_producto($data){
+
+            $this->db->select('*');
+            $this->db->from('productos');
+            $this->db->like('descripcion', "$data");
+            $this->db->like('eliminado', "NO");
+
+            $query = $this->db->get();
+
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
+        }
     /**
     * Retorna todos los electrodomesticos
     */

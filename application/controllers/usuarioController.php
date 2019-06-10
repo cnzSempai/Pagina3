@@ -246,8 +246,6 @@ function modificar_usuario()
 }
 function modificar_perfil()
 {
-    //Validación del formulario
-    $this->form_validation->set_rules('usuario', 'Usuario', 'required|is_unique[usuarios.nombre]');
     // $this->form_validation->set_rules('perfil_id', 'Perfil', 'required');
     $this->form_validation->set_rules('nombre', 'Nombre', 'required');
     $this->form_validation->set_rules('apellido', 'Apellido', 'required');
@@ -261,8 +259,18 @@ function modificar_perfil()
     $this->form_validation->set_message('numeric','<div class="alert alert-danger">El campo %s debe contener un valor numérico, al intentar modificar estaba vacio</div>');
 
     $id = $this->uri->segment(2);
-    $datos_usuario = $this->usuario_model->edit_usuario($id);
+    $session_data=$this->session->userdata('logged_in');
+    $usuario=$session_data['usuario'];
 
+    $dat = array(
+        'id'=>$id,
+        'nombre'=>$this->input->post('nombre',true),
+        'apellido'=>$this->input->post('apellido',true),
+        'email'=>$this->input->post('email',true),
+        'usuario'=>$usuario,
+        'pass'=>$this->input->post('pass',true),
+        'perfil_id'=>$session_data['perfil_id'],
+    );
     if ($this->form_validation->run()==FALSE)
     {
         $data = array('titulo' => 'Error de formulario');
@@ -277,15 +285,7 @@ function modificar_perfil()
     }
     else
     {
-      $dat = array(
-          'id'=>$id,
-          'usuario'=>$this->input->post('usuario',true),
-          'perfil_id'=>$this->input->post('perfil_id',true),
-          'nombre'=>$this->input->post('nombre',true),
-          'apellido'=>$this->input->post('apellido',true),
-          'email'=>$this->input->post('email',true),
-          'pass'=>$this->input->post('pass',true),
-      );
+
       $this->usuario_model->update_usuario($id, $dat);
       redirect('principal', 'refresh');
     }
@@ -399,7 +399,7 @@ function muestra_eliminados()
 
     $this->load->view('front/head_view', $data);
     $this->load->view('front/navbar_view');
-    $this->load->view('muestrausuarioseliminados', $dat);
+    $this->load->view('usuarios/usuarioseliminados', $dat);
     $this->load->view('front/footer_view');
     }else{
     redirect('login', 'refresh');}
