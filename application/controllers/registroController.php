@@ -63,7 +63,7 @@
 			else 	//Pasa la validacion
 			{
 				//Envio array al metodo insert para registro de datos
-				$usuario = $this->usuario_model->agregar_usuario($data);
+				$usuario = $this->usuario_model->add_usuario($data);
 
 				//Redirecciono a la pagina de perfil
 				redirect('login');

@@ -20,7 +20,7 @@
 		<a type="button" class="btn btn-success" href="<?php echo base_url('agregausuario'); ?>">Agregar</a>
 		<a type="button" class="btn btn-danger" href="<?php echo base_url('muestrausuarioseliminados'); ?>">ELIMINADOS</a>
 		<br> <br>
-		<table class="table table-bordered ">
+		<table id="tablas" class="table table-bordered ">
 			<thead>
 				<tr>
 					<th>ID</th>

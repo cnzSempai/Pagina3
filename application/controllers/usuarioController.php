@@ -31,7 +31,7 @@ function index()
 
     $this->load->view('front/head_view', $data);
     $this->load->view('front/navbar_view');
-    $this->load->view('muestrausuarios', $dat);
+    $this->load->view('usuarios/muestrausuarios', $dat);
     $this->load->view('front/footer_view');
     }else{
     redirect('login', 'refresh'); }
@@ -42,7 +42,7 @@ function index()
 function datosusuario($id)
 {
     if($this->_veri_log()){
-    $data = array('titulo' => 'Usuarios');
+    $data = array('titulo' => 'Usuario');
 
     $session_data = $this->session->userdata('logged_in');
     $data['perfil_id'] = $session_data['perfil_id'];
@@ -52,7 +52,7 @@ function datosusuario($id)
 
     $this->load->view('front/head_view', $data);
     $this->load->view('front/navbar_view');
-    $this->load->view('muestraDatos', $dat);
+    $this->load->view('usuarios/muestraDatos', $dat);
     $this->load->view('front/footer_view');
     }else{
     redirect('login', 'refresh'); }
@@ -73,7 +73,7 @@ function form_agrega_usuario()  	//Si se modifica, modificar (agrega_usuario) ta
 
     $this->load->view('front/head_view', $data);
     $this->load->view('front/navbar_view');
-    $this->load->view('agregausuario');
+    $this->load->view('usuarios/agregausuario');
     $this->load->view('front/footer_view');
     }else{
     redirect('login', 'refresh'); }
@@ -115,7 +115,7 @@ function agrega_usuario()
 
         $this->load->view('front/head_view', $data);
         $this->load->view('front/navbar_view');
-        $this->load->view('agregausuario');
+        $this->load->view('usuarios/agregausuario');
         $this->load->view('front/footer_view');
     }else {
       $data = array(
@@ -170,14 +170,14 @@ function muestra_modificar()
         return FALSE;
     }
     if($this->_veri_log()){
-    $data = array('titulo' => 'Modificar Usuario');
+    $data = array('titulo' => 'Modificar mis datos');
     $session_data = $this->session->userdata('logged_in');
     $data['perfil_id'] = $session_data['perfil_id'];
     $data['nombre'] = $session_data['nombre'];
 
     $this->load->view('front/head_view', $data);
     $this->load->view('front/navbar_view');
-    $this->load->view('modificarDatos', $dat);
+    $this->load->view('usuarios/modificarDatos', $dat);
     $this->load->view('front/footer_view');
     }else{
     redirect('login', 'refresh');}
@@ -225,7 +225,7 @@ function modificar_usuario()
 
         $this->load->view('front/head_view', $data);
         $this->load->view('front/navbar_view');
-        $this->load->view('modificarDatos', $dat);
+        $this->load->view('usuarios/modificarDatos', $dat);
         $this->load->view('front/footer_view');
     }
     else
@@ -272,7 +272,7 @@ function modificar_perfil()
 
         $this->load->view('front/head_view', $data);
         $this->load->view('front/navbar_view');
-        $this->load->view('modificarDatos', $dat);
+        $this->load->view('usuarios/modificarDatos', $dat);
         $this->load->view('front/footer_view');
     }
     else

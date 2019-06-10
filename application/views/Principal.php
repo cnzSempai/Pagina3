@@ -1,5 +1,7 @@
 <body  id="body">
+<?php $session_data = $this->session->userdata('logged_in'); ?>
 	<main id="main">
+
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -29,6 +31,7 @@
 </div>
 <!-- tarjetas -->
 <div class="container" id="">
+
 	<!-- filas -->
 	<div class="row">
 		<?php if (!$productos) { ?>
@@ -85,32 +88,56 @@
         						<p>
                                 <p>
                                     <p>
-            						<?php
-            							if (($row->stock > 0) && ($session_data = $this->session->userdata('logged_in'))and ($session_data['id'] == '2' )) {
+																			<div class="col">
+							                                        <?php
+							                                        if($row->stock <= 0){
+							                                            $btn = array(
+							                                                'class' => 'btn btn-danger',
+							                                                'value' => 'Comprar',
+							                                                'disabled' => '',
+							                                                'name' => 'action'
+							                                            );
+							                                            echo form_submit($btn);
+							                                            echo form_close();
 
-            								// Envia los datos en forma de formulario para agregar al carrito
-            		                        echo form_open('carrito_agrega');
-            		                        echo form_hidden('id', $row->id);
-            		                        echo form_hidden('descripcion', $row->descripcion);
-            		                        echo form_hidden('precio_venta', $row->precio_venta);
-            		                        echo form_hidden('stock', $row->stock);
-            		            	?>
-            		                    	<div>
-            		                <?php
-            		                        $btn = array(
-            		                            'class' => 'btn btn-success',
-            		                            'value' => 'Comprar',
-            		                            'name' => 'action'
-            		                        	);
+							                                            ?>
+							                                            <?php
+							                                        } else if ($session_data = $this->session->userdata('logged_in')){
+							                                            if ($session_data['perfil_id']==2) {
+																														// Envia los datos en forma de formulario para agregar al carrito
+								                                            echo form_open('carrito_agrega');
+								                                            echo form_hidden('id', $row->id);
+								                                            echo form_hidden('descripcion', $row->descripcion);
+								                                            echo form_hidden('precio_venta', $row->precio_venta);
+								                                            echo form_hidden('stock', $row->stock);
+								                                            ?>
+								                                            <?php
+								                                            $btn = array(
+								                                                'class' => 'btn btn-success',
+								                                                'value' => 'Comprar',
+								                                                'name' => 'action'
+								                                            );
+								                                            echo form_submit($btn);
+								                                            echo form_close();
 
-            		                        echo form_submit($btn);
-            		                        echo form_close();
-            		               	?>
-            		                    	</div>
-            		               	<?php
 
-            							}
-            						?>
+							                                            }else{
+																														?>
+																														<input id="btnAdvertencia" type="button" onclick="alert('¡Debe registrarse como cliente!')" value="Desea Comprar?" />
+																													<?php  }
+																													?>
+							                                            <?php
+							                                        } else {
+							                                            ?>
+							                                            <button class=" btn btn-success my-2 my-sm-0" type="submit">
+							                                             <a href="<?php echo base_url('login');?>">Comprar</a>
+							                                            </button>
+
+							                                            <?php
+
+							                                        }
+							                                        ?>
+							                                    </div>
 
                             </div>
                         </div>

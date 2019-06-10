@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-
 <head>
+
+
+            <center class="navbar-logo " >
+                <a class="ml-20" href="<?php echo base_url('principal');?>"><img  src="<?php echo base_url('assets/img/logo.png'); ?>" class="img-responsive" alt="Logo" style="height: 60px;"></a>
+            </center>
+
     <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <metahttp-equiv="X-UA-Compatible"content="IE=edge">
@@ -27,6 +33,7 @@
                 }
             }
         </script>
+
         <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
 
 </head>

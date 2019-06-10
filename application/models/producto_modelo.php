@@ -51,7 +51,7 @@ class Producto_modelo extends CI_Model{
     /**
     * Retorna todos los muebles
     */
-    function get_muebles()
+    function get_indumenarias()
     {
         $query = $this->db->get_where('productos', array('eliminado' => 'NO', 'id_categoria' => '2'));
 

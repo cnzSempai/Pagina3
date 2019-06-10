@@ -100,8 +100,9 @@ $route['confirma_compra'] = 'carrito_controller/guarda_compra';
 $route['carrito_actualiza'] = 'carrito_controller/actualiza_carrito';
 $route['carrito_elimina/(:any)'] = 'carrito_controller/remove/$1';
 
-//consultas
-$route['consultas']= 'productoController/listar_ventas';
+//consultasa
+$route['ventas']= 'productoController/listar_ventas';
+$route['consultas']= 'consultaController/listar_consultas';
 $route['muestradetalle/(:num)']= 'productoController/muestra_detalle/$1';
 
 $route['404_override'] = '';

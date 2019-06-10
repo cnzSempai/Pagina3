@@ -30,10 +30,10 @@ class Carrito_controller extends CI_Controller {
 		$this->load->view('front/navbar_view', $data);
 		if ($session_data)
 		{
-			$this->load->view('carritoparte' );
+			$this->load->view('carrito/carritoparte' );
 		}
 
-		$this->load->view('electrodomesticos', $dat);
+		$this->load->view('producto/electrodomesticos', $dat);
 		$this->load->view('front/footer_view');
 	}
 	public function electrodomesticosPrincipal()
@@ -52,7 +52,7 @@ class Carrito_controller extends CI_Controller {
 			$this->load->view('stock' );
 		}
 
-		$this->load->view('electrodomesticos', $dat);
+		$this->load->view('producto/electrodomesticos', $dat);
 		$this->load->view('front/footer_view');
 	}
 
@@ -140,7 +140,7 @@ class Carrito_controller extends CI_Controller {
 
 		$this->load->view('front/head_view', $data);
 		$this->load->view('front/navbar_view', $data);
-		$this->load->view('compra', $data);
+		$this->load->view('carrito/compra', $data);
 		$this->load->view('front/footer_view');
     }
 
@@ -200,7 +200,7 @@ class Carrito_controller extends CI_Controller {
 
         $this->load->view('front/head_view', $data);
 		$this->load->view('front/navbar_view', $data);
-		$this->load->view('compralista');
+		$this->load->view('carrito/compralista');
 		$this->load->view('front/footer_view');
 
 		$final = $this->cart->destroy();

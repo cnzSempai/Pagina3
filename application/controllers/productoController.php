@@ -35,7 +35,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view');
-			$this->load->view('muestraproductos', $dat);
+			$this->load->view('producto/muestraproductos', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh'); }
@@ -57,7 +57,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view', $data);
-			$this->load->view('muestraelectrodomesticos', $dat);
+			$this->load->view('producto/muestraelectrodomesticos', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh'); }
@@ -66,7 +66,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 		/**
 	    * Muestra todos los muebles en tabla
 	    */
-		function muestra_muebles()
+		function muestra_indumentaria()
 		{
 			if($this->_veri_log()){
 			$data = array('titulo' => 'Muebles');
@@ -75,11 +75,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 
-			$dat = array('productos' => $this->Producto_modelo->get_muebles() );
+			$dat = array('productos' => $this->Producto_modelo->get_indumenarias());
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view');
-			$this->load->view('muestramuebles', $dat);
+			$this->load->view('producto/muestraIndumentaria', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh'); }
@@ -99,7 +99,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view');
-			$this->load->view('agregaproducto');
+			$this->load->view('producto/agregaproducto');
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh'); }
@@ -141,7 +141,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 				$this->load->view('front/head_view', $data);
 				$this->load->view('front/navbar_view');
-				$this->load->view('agregaproducto');
+				$this->load->view('producto/agregaproducto');
 				$this->load->view('front/footer_view');
 			}
 			else
@@ -257,7 +257,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view');
-			$this->load->view('modificarproducto', $dat);
+			$this->load->view('producto/modificarProducto', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh');}
@@ -310,7 +310,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 				$this->load->view('front/head_view', $data);
 				$this->load->view('front/navbar_view');
-				$this->load->view('modificarproducto', $dat);
+				$this->load->view('modificarProducto', $dat);
 				$this->load->view('front/footer_view');
 			}
 			else
@@ -435,7 +435,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view');
-			$this->load->view('muestraeliminados', $dat);
+			$this->load->view('producto/muestraeliminados', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh');}
@@ -455,7 +455,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/head_view',$data);
 			$this->load->view('front/navbar_view',$data);
-			$this->load->view('muestraventas',$dat);
+			$this->load->view('reportes/muestraventas',$dat);
 			$this->load->view('front/footer_view');
             }else{
 			redirect('login', 'refresh');
@@ -476,7 +476,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 				$this->load->view('front/head_view', $data);
 			$this->load->view('front/navbar_view', $data);
-			$this->load->view('muestradetalle', $dat);
+			$this->load->view('reportes/muestradetalle', $dat);
 			$this->load->view('front/footer_view');
             }else{
 			redirect('login', 'refresh');

@@ -19,7 +19,7 @@
 			<h1>Todas las Indumentarias</h1>
 		</div>
 		<a type="button" class="btn btn-success" href="<?php echo base_url('agregaproducto'); ?>">Agregar</a>
-		<table class="table table-bordered">
+		<table id="tablas" class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>

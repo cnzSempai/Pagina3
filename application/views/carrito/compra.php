@@ -17,7 +17,7 @@
         <div align="center">
             <h2 id="h2" align="center">Info de Compra</h2>
 
-            <table class="table" border="0" cellpadding="2px" >
+            <table id="tablas" class="table" border="0" cellpadding="2px" >
                 <tr>
                     <td>
                         Total Compra:

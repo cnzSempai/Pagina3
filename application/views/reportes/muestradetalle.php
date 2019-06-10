@@ -1,7 +1,7 @@
   <section class="mbr-section article content12 cid-qRlf4ndxBK" id="content12-m">
        <div class="container">
 	<div class="well">
-	<br>       
+	<br>
      <?php if (!$ventas_detalle) { ?>
 
 	<div class="container">
@@ -9,18 +9,18 @@
 			<h1>No se realizaron Ventas</h1>
             <hr>
 		</div>
-		
+
 	</div>
 
-<?php } else { ?>                  
+<?php } else { ?>
 <div class="container mt-5 pt-5">
 	<div class="well">
         <br>
 		<h1><b>Detalle de Ventas</b></h1>
         <hr>
-	</div>	
+	</div>
 	<br>
-	<table class="table table-bordered">
+	<table id="tablas" class="table table-bordered">
 		<thead>
 			<tr>
 				<th>id producto </th>
@@ -28,7 +28,7 @@
 				<th>Cantidad</th>
 				<th>Precio Unitario</th>
 				<th>Sub Total</th>
-				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -41,13 +41,13 @@
 				<td><?php echo $row->precio;  ?></td>
                 <td><?php echo $row->precio * $row->cantidad; ?></td>
 			</tr>
-           
-            
+
+
 			<?php } ?>
 		</tbody>
 	</table>
 		<?php } ?>
-</div>	            
+</div>
 	 <br>
 </div>
 </section>

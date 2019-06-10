@@ -16,7 +16,7 @@
             ?>
         </div>
 
-        <table class="table" border="0" cellpadding="5px" cellspacing="1px">
+        <table id="tablas" class="table" border="0" cellpadding="5px" cellspacing="1px">
 
             <?php // Todos los items de carrito en "$cart".
             if ($cart = $this->cart->contents()):
@@ -62,7 +62,7 @@
                         </td>
                         <td>
                             <?php // Imagen
-                                $path = '<img src= '. base_url('assets/img/cart_cross.jpg') . ' width="25px" height="20px">';
+                                $path = '<img src= '. base_url('assets/img/Cancel.png') . ' width="25px" height="20px">';
                                 echo anchor('carrito_elimina/' . $item['rowid'], $path);
                             ?>
                         </td>

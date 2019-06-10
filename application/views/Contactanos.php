@@ -6,6 +6,30 @@
     <div class="col-fluid " style="background: white;" >
           <fieldset>
             <div class="form-group">
+  						<label class="col-lg-2 control-label">Nombre(s)</label>
+  						<div class="col-lg-10">
+  							<?php echo form_input(['name' => 'nombre',
+  													'id' => 'nombre',
+  													'class' => 'form-control',
+  													'placeholder' => 'Nombre',
+  													'required'=>'required',
+  													'autofocus'=>'autofocus',
+  													'value'=>set_value('nombre')]); ?>
+  						</div>
+  					</div>
+            <div class="form-group">
+  						<label class="col-lg-2 control-label">Apellido(s)</label>
+  						<div class="col-lg-10">
+  							<?php echo form_input(['name' => 'apellido',
+  													'id' => 'apellido',
+  													'class' => 'form-control',
+  													'placeholder' => 'Apellido',
+  													'required'=>'required',
+  													'autofocus'=>'autofocus',
+  													'value'=>set_value('apellido')]); ?>
+  						</div>
+  					</div>
+            <div class="form-group">
   						<label class="col-lg-2 control-label">Correo</label>
   						<div class="col-lg-10">
   							<?php echo form_input(['name' => 'email',
@@ -17,15 +41,27 @@
   													'value'=>set_value('email')]); ?>
   						</div>
   					</div>
-  					<div class="form-group">
-  						<label class="col-lg-2 control-label">Descripcion</label>
+            <div class="form-group">
+  						<label class="col-lg-2 control-label">Asunto</label>
   						<div class="col-lg-10">
-  							<?php echo form_textarea(['name' => 'descripcion',
-  													'id' => 'descripcion',
+  							<?php echo form_input(['name' => 'asunto',
+  													'id' => 'asunto',
   													'class' => 'form-control',
-  													'placeholder' => 'Descripcion',
+  													'placeholder' => 'Asunto',
   													'required'=>'required',
-  													'value'=>set_value('descripcion')]); ?>
+  													'autofocus'=>'autofocus',
+  													'value'=>set_value('asunto')]); ?>
+  						</div>
+  					</div>
+  					<div class="form-group">
+  						<label class="col-lg-2 control-label">Mensaje</label>
+  						<div class="col-lg-10">
+  							<?php echo form_textarea(['name' => 'mensaje',
+  													'id' => 'mensaje',
+  													'class' => 'form-control',
+  													'placeholder' => 'Mensaje',
+  													'required'=>'required',
+  													'value'=>set_value('mensaje')]); ?>
   						</div>
   					</div>
             <div class="col-lg-3 col-lg-offset-4">

@@ -1,6 +1,10 @@
 #navbar a{
   font-weight: bold;
-  color:black;
+  color:white;
+}
+
+#navbar{
+  background: #323232;
 }
 
 #main .carousel-inner img{
@@ -9,8 +13,49 @@
 
 }
 
-#botonMenu a{
+#tablas{
+  background-color: white;
+}
+
+#agregaproducto{
+  background-image: url("../img/argentina.jpg");
+}
+
+#contProductos{
+  align:right;
+  background-color: white;
+}
+
+#navDetalles{
+  background: #323232;
   color: black;
+}
+
+#navDetalles a:hover{
+  background-color: black;
+}
+
+#mainCompras{
+  background-image: url("../img/bernabeu.jpg");
+}
+#mainProductos{
+  background-image: url("../img/campNou.jpg");
+}
+
+#btnAdvertencia{
+  background: yellow;
+  color: black;
+}
+
+.flotante {
+    display:scroll;
+        position:fixed;
+        bottom:320px;
+        right:0px;
+}
+
+#botonMenu a{
+  color: white;
   margin: 2;
   font-family:cursive;
   font-size: 20px;
